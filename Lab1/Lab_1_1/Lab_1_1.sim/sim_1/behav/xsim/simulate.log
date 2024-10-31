@@ -1,0 +1,11 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Time = 0 | x = 0 | y = 0 | z = 0 | D = 00000001
+Time = 10000 | x = 0 | y = 0 | z = 1 | D = 00000010
+Time = 20000 | x = 0 | y = 1 | z = 0 | D = 00000100
+Time = 30000 | x = 0 | y = 1 | z = 1 | D = 00001000
+Time = 40000 | x = 1 | y = 0 | z = 0 | D = 00010000
+Time = 50000 | x = 1 | y = 0 | z = 1 | D = 00100000
+Time = 60000 | x = 1 | y = 1 | z = 0 | D = 01000000
+Time = 70000 | x = 1 | y = 1 | z = 1 | D = 10000000
+$finish called at time : 80 ns : File "D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab1/Lab_1_1/Lab_1_1.srcs/sim_1/new/decoder_3_8_sim.v" Line 70

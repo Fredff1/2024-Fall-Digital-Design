@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.sim/sim_1/synth/timing/xsim/sim_alu_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module Multiplier
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.srcs/sim_1/new/sim_alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim_alu

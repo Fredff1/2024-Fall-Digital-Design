@@ -1,0 +1,6 @@
+Breakpoint File Version 1.0
+32 true D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab1/Lab_1_1/Lab_1_1.srcs/sources_1/new/decoder_3_8.v
+33 true D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab1/Lab_1_1/Lab_1_1.srcs/sources_1/new/decoder_3_8.v
+35 true D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab1/Lab_1_1/Lab_1_1.srcs/sources_1/new/decoder_3_8.v
+37 true D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab1/Lab_1_1/Lab_1_1.srcs/sources_1/new/decoder_3_8.v
+36 true D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab1/Lab_1_1/Lab_1_1.srcs/sources_1/new/decoder_3_8.v
