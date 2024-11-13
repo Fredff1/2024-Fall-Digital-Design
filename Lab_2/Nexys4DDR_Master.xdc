@@ -27,7 +27,7 @@ set_property -dict { PACKAGE_PIN U8    IOSTANDARD LVCMOS18 } [get_ports {type[1]
 #set_property -dict { PACKAGE_PIN U11   IOSTANDARD LVCMOS33 } [get_ports { SW[14] }]; #IO_L19N_T3_A09_D25_VREF_14 Sch=sw[14]
 #set_property -dict { PACKAGE_PIN V10   IOSTANDARD LVCMOS33 } [get_ports { SW[15] }]; #IO_L21P_T3_DQS_14 Sch=sw[15]
 
-set_property IOSTANDARD LVCMOS33 [get_ports { result[7:0] }]
+#set_property IOSTANDARD LVCMOS33 [get_ports { result[7:0] }]
 
 
 ## LEDs

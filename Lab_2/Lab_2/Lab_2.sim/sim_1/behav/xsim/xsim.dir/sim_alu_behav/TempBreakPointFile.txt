@@ -1,5 +1,0 @@
-Breakpoint File Version 1.0
-46 true D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.srcs/sim_1/new/sim_alu.v
-42 true D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.srcs/sim_1/new/sim_alu.v
-34 true D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.srcs/sim_1/new/sim_alu.v
-38 true D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.srcs/sim_1/new/sim_alu.v

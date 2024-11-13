@@ -21,41 +21,41 @@
 
 
 module HexTo7Segment(
-    input CLK100MHZ,           // 100MHz 时钟输入
-    input [7:0] result,        // ALU 的输出（8 位，包含高 4 位和低 4 位）
-    output reg [7:0] AN,       // 数码管选择信号（2 位，低电平有效）
-    output reg [6:0] seg,      // 7 段数码管段码输出
-    output DP                  // 小数点输出
+    input CLK100MHZ,          
+    input [7:0] result,        
+    output reg [7:0] AN,      
+    output reg [6:0] seg,     
+    output DP                  
     );
 
-    assign DP = 1;             // 小数点关闭
+    assign DP = 1;             
 
-    reg [19:0] clkdiv;         // 时钟分频器
+    reg [19:0] clkdiv;         
 
-    // 时钟分频器，用于生成低频数码管切换信号
+ 
     always @(posedge CLK100MHZ) begin
         clkdiv <= clkdiv + 1;
     end
 
-    wire s = clkdiv[19];       // 使用 clkdiv[19] 实现约 10ms 的分时切换
+    wire s = clkdiv[19];       
     
     
-    // 数码管选择和 7 段数码管显示
+   
     always @(*) begin
    
         case(s)
             1'b0: begin
-                AN = 8'b11111110;                   // 激活低位数码管
-                seg = hex_to_7seg(result[3:0]);  // 显示 result 的低 4 位
+                AN = 8'b11111110;                  
+                seg = hex_to_7seg(result[3:0]);  
             end
             1'b1: begin
-                AN = 8'b11111101;                   // 激活高位数码管
-                seg = hex_to_7seg(result[7:4]);  // 显示 result 的高 4 位
+                AN = 8'b11111101;                  
+                seg = hex_to_7seg(result[7:4]);  
             end
         endcase
     end
 
-    // 7 段数码管译码函数
+
     function [6:0] hex_to_7seg;
         input [3:0] hex;
         case (hex)
@@ -75,7 +75,7 @@ module HexTo7Segment(
             4'hD: hex_to_7seg = 7'b0100001;
             4'hE: hex_to_7seg = 7'b0000110;
             4'hF: hex_to_7seg = 7'b0001110;
-            default: hex_to_7seg = 7'b1111111; // 关闭显示
+            default: hex_to_7seg = 7'b1111111; 
         endcase
     endfunction
 endmodule

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:46:05 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Thu Nov  7 19:30:14 2024
+# Process ID: 13960
+# Current directory: D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.sim/sim_1/impl/timing/xsim
+# Command line: wbtcv.exe -mode batch -source D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.sim/sim_1/impl/timing/xsim/xsim.dir/ALU_tb_time_impl/webtalk/xsim_webtalk.tcl -notrace
+# Log file: D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.sim/sim_1/impl/timing/xsim/webtalk.log
+# Journal file: D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.sim/sim_1/impl/timing/xsim\webtalk.jou
+#-----------------------------------------------------------
+source D:/Courses/CS_Cousrces/2024 -notrace
+couldn't read file "D:/Courses/CS_Cousrces/2024": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Thu Nov  7 19:30:14 2024...

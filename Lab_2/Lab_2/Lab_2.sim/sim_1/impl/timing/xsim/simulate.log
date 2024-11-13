@@ -1,0 +1,7 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Time =                    0 : A = 0011, B = 0010, type = 00, result = xxxxxxxx, AN = xxxxxxxx, seg = xxxxxxx
+Time =                   50 : A = 0100, B = 0001, type = 01, result = xxxxxxxx, AN = xxxxxxxx, seg = xxxxxxx
+Time =                  100 : A = 0110, B = 0001, type = 10, result = xxxxxxxx, AN = xxxxxxxx, seg = xxxxxxx
+Time =                  150 : A = 0011, B = 0010, type = 11, result = xxxxxxxx, AN = xxxxxxxx, seg = xxxxxxx
+$finish called at time : 200 ps : File "D:/Courses/CS_Cousrces/2024 Fall Digital Design/Lab_2/Lab_2/Lab_2.srcs/sim_1/new/sim_alu.v" Line 52

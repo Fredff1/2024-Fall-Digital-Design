@@ -27,10 +27,11 @@ module ALU(
     input [1:0] type,
     output [6:0] seg, 
     output [7:0] AN ,
-    output DP
+    output DP,
+    output reg [7:0] result
     );
     
-    reg [7:0] result;
+    
     wire [7:0] add_result;
     wire [7:0] subtract_result;
     wire [7:0] negative_result;
