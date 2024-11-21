@@ -26,16 +26,25 @@ module HexTo7Segment(
     input [7:0] amount_paid,        
     output reg [7:0] AN,      
     output reg [6:0] seg,     
-    output DP                  
+    output reg DP                  
     );
 
-    assign DP = 1;             
+           
 
-    reg [19:0] clkdiv;         
+    reg [19:0] clkdiv;       
+    reg [3:0] yuan_tens, yuan_units, jiao_units;  
+    integer total_jiao;
 
  
     always @(posedge CLK100MHZ) begin
         clkdiv <= clkdiv + 1;
+    end
+    
+    always @(*) begin
+        total_jiao = amount_paid * 5;    
+        yuan_tens = (total_jiao / 10) / 10;    
+        yuan_units = (total_jiao / 10) % 10;   
+        jiao_units = total_jiao % 10;         
     end
 
     wire [1:0] s = clkdiv[19:18];       
@@ -48,19 +57,24 @@ module HexTo7Segment(
             2'b00: begin
                 AN = 8'b11111110;                  
                 seg = hex_to_7seg(item_type);  
+                DP=1; 
             end
             2'b01: begin
                 AN = 8'b11111101;                  
-                seg = hex_to_7seg(amount_paid[3:0]);  
+                seg = hex_to_7seg(jiao_units);  
+                DP=1; 
             end
             2'b10: begin
                 AN = 8'b11111011;                  
-                seg = hex_to_7seg(amount_paid[7:4]);  
+                seg = hex_to_7seg(yuan_units); 
+                DP=0; 
             end
             2'b11: begin
-                AN = 8'b11111111;                  
-                seg = 7'b0000000;
+                AN = 8'b11110111;                  
+                seg=hex_to_7seg(yuan_tens);
+                DP=1; 
             end
+            
         endcase
     end
 

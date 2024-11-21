@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Debounce_money.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Debounce_money
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/HexTo7Segment.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HexTo7Segment
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

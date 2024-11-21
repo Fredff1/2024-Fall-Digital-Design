@@ -36,13 +36,13 @@ module Debounce_money(
             money_input_prev <= 0;
         end else begin
             if (money_input == money_input_prev) begin
-                // 如果输入信号稳定（没有变化），计数器累加
+                // if the input is not changed,update debounce_counter util it reaches edge
                 debounce_counter <= debounce_counter + 1;
                 if (debounce_counter == 20'hFFFFF) begin
-                    stable_money_input <= money_input;   // 更新为稳定的信号
+                    stable_money_input <= money_input;   //update stable input
                 end
             end else begin
-                // 如果输入信号变化，重置计数器
+                // if input changed reset counter
                 debounce_counter <= 0;
                 money_input_prev <= money_input;
             end

@@ -1,0 +1,6 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Test Case 1 Failed: Purchase failed
+Test Case 2 Failed: Purchase failed
+Test Case 3 Passed: Purchase correctly failed due to insufficient funds
+$finish called at time : 820 ns : File "D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sim_1/new/Controller_tb.v" Line 115

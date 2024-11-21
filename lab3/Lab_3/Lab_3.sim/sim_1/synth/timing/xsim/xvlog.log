@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.sim/sim_1/synth/timing/xsim/Controller_time_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-311] analyzing module Debounce_money
+INFO: [VRFC 10-311] analyzing module HexTo7Segment
+INFO: [VRFC 10-311] analyzing module glbl

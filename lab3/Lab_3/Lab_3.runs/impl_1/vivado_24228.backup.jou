@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2700185 on Thu Oct 24 18:46:05 MDT 2019
+# IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
+# Start of session at: Thu Nov 21 16:36:35 2024
+# Process ID: 24228
+# Current directory: D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.runs/impl_1
+# Command line: vivado.exe -log Controller.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Controller.tcl -notrace
+# Log file: D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.runs/impl_1/Controller.vdi
+# Journal file: D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source Controller.tcl -notrace
