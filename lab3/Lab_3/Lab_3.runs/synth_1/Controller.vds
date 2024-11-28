@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:46:05 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Thu Nov 21 16:41:35 2024
-# Process ID: 11744
+# Start of session at: Thu Nov 28 16:20:33 2024
+# Process ID: 20384
 # Current directory: D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.runs/synth_1
 # Command line: vivado.exe -log Controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Controller.tcl
 # Log file: D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.runs/synth_1/Controller.vds
@@ -16,24 +16,24 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-2L
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2576 
+INFO: Helper process launched with PID 7180 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:02 . Memory (MB): peak = 966.969 ; gain = 234.359
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 966.680 ; gain = 234.645
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'Controller' [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Controller' [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Controller.v:24]
 INFO: [Synth 8-6157] synthesizing module 'Debounce_money' [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Debounce_money.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Debounce_money' (1#1) [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Debounce_money.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Controller.v:92]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Controller.v:102]
 INFO: [Synth 8-6157] synthesizing module 'HexTo7Segment' [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/HexTo7Segment.v:23]
 INFO: [Synth 8-226] default block is never used [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/HexTo7Segment.v:84]
 INFO: [Synth 8-226] default block is never used [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/HexTo7Segment.v:84]
 INFO: [Synth 8-226] default block is never used [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/HexTo7Segment.v:84]
 INFO: [Synth 8-226] default block is never used [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/HexTo7Segment.v:84]
 INFO: [Synth 8-6155] done synthesizing module 'HexTo7Segment' (2#1) [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/HexTo7Segment.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Controller' (3#1) [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Controller' (3#1) [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.srcs/sources_1/new/Controller.v:24]
 WARNING: [Synth 8-3331] design Controller has unconnected port reset_money_input
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 1038.488 ; gain = 305.879
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1038.848 ; gain = 306.812
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -46,45 +46,55 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 1038.488 ; gain = 305.879
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1038.848 ; gain = 306.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 1038.488 ; gain = 305.879
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1038.848 ; gain = 306.812
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1038.488 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1038.848 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'amount_paid[7:0]'. [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'debounced_money_input[3:0]'. [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'item_price[7:0]'. [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+CRITICAL WARNING: [Common 17-69] Command failed: Invalid I/O Standard 'NONE'. Default I/O Standard is used instead [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc:13]
 Finished Parsing XDC File [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Controller_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Controller_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1154.391 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1131.926 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1154.391 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1131.926 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1154.391 ; gain = 421.781
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1131.926 ; gain = 399.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-2L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1154.391 ; gain = 421.781
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1131.926 ; gain = 399.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1154.391 ; gain = 421.781
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1131.926 ; gain = 399.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1154.391 ; gain = 421.781
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1131.926 ; gain = 399.891
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -173,7 +183,7 @@ INFO: [Synth 8-3886] merging instance 'item_price_reg[5]' (FDC) to 'item_price_r
 INFO: [Synth 8-3886] merging instance 'item_price_reg[6]' (FDC) to 'item_price_reg[7]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\item_price_reg[7] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 1154.391 ; gain = 421.781
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1131.926 ; gain = 399.891
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -185,13 +195,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:13 . Memory (MB): peak = 1154.391 ; gain = 421.781
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 1131.926 ; gain = 399.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1154.391 ; gain = 421.781
+Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1139.578 ; gain = 407.543
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -203,7 +213,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1155.133 ; gain = 422.523
+Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 1152.656 ; gain = 420.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -227,13 +237,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.930 ; gain = 437.320
+Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1167.434 ; gain = 435.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.930 ; gain = 437.320
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1167.434 ; gain = 435.398
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -252,25 +262,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.930 ; gain = 437.320
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1167.434 ; gain = 435.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.930 ; gain = 437.320
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1167.434 ; gain = 435.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.930 ; gain = 437.320
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1167.434 ; gain = 435.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.930 ; gain = 437.320
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1167.434 ; gain = 435.398
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -297,40 +307,40 @@ Report Cell Usage:
 |9     |FDCE   |    43|
 |10    |FDRE   |    20|
 |11    |IBUF   |     9|
-|12    |OBUF   |    17|
+|12    |OBUF   |    38|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+----------------+---------------+------+
 |      |Instance        |Module         |Cells |
 +------+----------------+---------------+------+
-|1     |top             |               |   867|
+|1     |top             |               |   888|
 |2     |  debounce_inst |Debounce_money |    86|
 |3     |  display       |HexTo7Segment  |    79|
 +------+----------------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.930 ; gain = 437.320
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1167.434 ; gain = 435.398
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:02 ; elapsed = 00:00:15 . Memory (MB): peak = 1169.930 ; gain = 321.418
-Synthesis Optimization Complete : Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 1169.930 ; gain = 437.320
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 1167.434 ; gain = 342.320
+Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 1167.434 ; gain = 435.398
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1181.996 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1179.488 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 106 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1181.996 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1179.488 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-26 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+26 Infos, 5 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 1181.996 ; gain = 756.586
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1181.996 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:20 . Memory (MB): peak = 1179.488 ; gain = 754.148
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1179.488 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/Courses/CS_Cousrces/2024 Fall Digital Design/lab3/Lab_3/Lab_3.runs/synth_1/Controller.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Controller_utilization_synth.rpt -pb Controller_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 21 16:41:58 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 28 16:20:56 2024...

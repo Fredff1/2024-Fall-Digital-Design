@@ -19,6 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`define SIMULATION
 
 module Controller(
     input wire CLK100MHZ,                 
@@ -31,14 +32,23 @@ module Controller(
     output [6:0] seg, 
     output [7:0] AN,
     output DP
+    `ifdef SIMULATION
+    ,
+    output reg [7:0] amount_paid,
+    output reg [7:0] item_price,
+    output wire [3:0] debounced_money_input,
+    output reg button_pressed
+    `endif
     );
-
-    reg [7:0] item_price;           
-    reg [7:0] amount_paid;    
-    reg button_pressed;
-
+    
+    `ifndef SIMULATION
+    reg [7:0] amount_paid;
+    reg [7:0] item_price;
     wire [3:0] debounced_money_input;
-
+    reg button_pressed;
+     `endif
+    
+    
     Debounce_money debounce_inst (
         .CLK100MHZ(CLK100MHZ),              //Clock signal 
         .rst(rst),                    // reset signal

@@ -7,6 +7,11 @@
 set_property -dict { PACKAGE_PIN E3    IOSTANDARD LVCMOS33 } [get_ports { CLK100MHZ }]; #IO_L12P_T1_MRCC_35 Sch=clk100mhz
 create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {CLK100MHZ}];
 
+set_property IOSTANDARD NONE [get_ports {amount_paid[7:0]}]
+set_property IOSTANDARD NONE [get_ports {debounced_money_input[3:0]}]
+set_property IOSTANDARD NONE [get_ports {item_price[7:0]}]
+set_property IOSTANDARD NONE [get_ports {button_pressed}]
+
 
 ##Switches
 

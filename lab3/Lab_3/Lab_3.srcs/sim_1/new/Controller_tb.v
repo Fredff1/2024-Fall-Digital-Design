@@ -1,60 +1,116 @@
-// Simulation process
-initial begin
-    // Initialize inputs
-    rst = 1;  // Apply reset
-    item_type = 0;
-    money_input = 0;
-    reset_money_input = 0;
+`timescale 1ns / 1ps
 
-    // Wait for reset to take effect
-    #20;
-    rst = 0;  // Release reset
 
-    // Test Case 1: Purchase item with type 3'b001 (price = 1)
-    item_type = 3'b001;
-    #100;
-    money_input = 4'b0001; // Input 0.5
-    #2000;                 // Hold signal stable for enough time
-    money_input = 4'b0000; // Release input
-    #100;
 
-    money_input = 4'b0010; // Input 1
-    #2000;                 // Hold signal stable for enough time
-    money_input = 4'b0000; // Release input
+module Controller_tb;
 
-    // Check purchase success
-    #50;
-    if (purchase_success)
-        $display("Test Case 1 Passed: Item purchased successfully");
-    else
-        $display("Test Case 1 Failed: Purchase failed");
 
-    // Test Case 2: Purchase item with type 3'b101 (price = 13)
-    item_type = 3'b001;
-    #10000000;
-   
-    // Check purchase success
-    #2000;
-    if (purchase_success)
-        $display("Test Case 2 Passed: Item purchased successfully");
-    else
-        $display("Test Case 2 Failed: Purchase failed");
+    reg CLK100MHZ;
+    reg rst;
+    reg [3:0] item_type;
+    reg [3:0] money_input;
+    reg reset_money_input;
 
-    // Test Case 3: Insufficient money
-    item_type = 3'b011; // Price = 3
-    #100;
-    money_input = 4'b0010; // Input 1
-    #2000;                 // Hold signal stable for enough time
-    money_input = 4'b0000; // Release input
 
-    // Check purchase success
-    #50;
-    if (!purchase_success)
-        $display("Test Case 3 Passed: Purchase correctly failed due to insufficient funds");
-    else
-        $display("Test Case 3 Failed: Purchase incorrectly succeeded");
+    wire purchase_success;
+    wire [6:0] seg;
+    wire [7:0] AN;
+    wire DP;
+    wire [7:0] item_price;           
+    wire [7:0] amount_paid;    
+    wire button_pressed;
+    wire [3:0] debounced_money_input;
 
-    // End simulation
-    #50;
-    $finish;
-end
+
+    Controller uut (
+        .CLK100MHZ(CLK100MHZ),
+        .rst(rst),
+        .item_type(item_type),
+        .money_input(money_input),
+        .reset_money_input(reset_money_input),
+        .purchase_success(purchase_success),
+        .seg(seg),
+        .AN(AN),
+        .DP(DP),
+        .item_price(item_price),
+        .amount_paid(amount_paid),
+       .button_pressed(button_pressed),
+       .debounced_money_input(debounced_money_input)
+        
+    );
+
+
+    always #5 CLK100MHZ = ~CLK100MHZ;
+    
+
+    initial begin
+
+        CLK100MHZ = 0;
+        rst = 1;
+        item_type = 3'b000;
+        money_input = 4'b0000;
+        reset_money_input = 0;
+
+
+        #20;
+        rst = 0;
+
+
+        item_type = 3'b010;
+        #20;
+
+
+        money_input = 4'b0001;
+        #200000;             
+        money_input = 4'b0000; 
+        #200000;
+
+        money_input = 4'b0001; 
+        #200000;        
+        money_input = 4'b0000; 
+        #200000;
+
+ 
+        #20;
+        if (purchase_success)
+            $display("Test Case 1 Passed: Purchase successful for item 3'b010");
+        else
+            $display("Test Case 1 Failed: Purchase not successful for item 3'b010");
+
+ 
+        item_type = 3'b101;
+        #20;
+
+
+        repeat (5) begin
+            money_input = 4'b0100; 
+            #21474837;             
+            money_input = 4'b0000; 
+            #21474847;
+        end
+        
+        rst = 1;
+        #20;
+        rst = 0;
+        #21474837;
+        
+        item_type = 3'b010;
+        repeat (3) begin
+            money_input = 4'b0001; 
+            #21474837;             
+            money_input = 4'b0000; 
+            #21474847;
+        end
+
+    
+        #20;
+        if (purchase_success)
+            $display("Test Case 2 Passed: Purchase successful for item 3'b101");
+        else
+            $display("Test Case 2 Failed: Purchase not successful for item 3'b101");
+
+       
+        $stop;
+    end
+
+endmodule
