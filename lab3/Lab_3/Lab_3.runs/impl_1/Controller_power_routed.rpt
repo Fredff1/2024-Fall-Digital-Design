@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (win64) Build 2700185 Thu Oct 24 18:46:05 MDT 2019
-| Date             : Thu Nov 28 16:21:45 2024
+| Date             : Thu Dec  5 16:33:23 2024
 | Host             : FredMachine running 64-bit major release  (build 9200)
 | Command          : report_power -file Controller_power_routed.rpt -pb Controller_power_summary_routed.pb -rpx Controller_power_routed.rpx
 | Design           : Controller
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.126        |
+| Total On-Chip Power (W)  | 0.117        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.022        |
-| Device Static (W)        | 0.104        |
+| Dynamic (W)              | 0.020        |
+| Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 99.4         |
-| Junction Temperature (C) | 25.6         |
+| Max Ambient (C)          | 99.5         |
+| Junction Temperature (C) | 25.5         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      852 |       --- |             --- |
+| Slice Logic    |     0.002 |      846 |       --- |             --- |
 |   LUT as Logic |     0.002 |      488 |     63400 |            0.77 |
 |   CARRY4       |    <0.001 |      106 |     15850 |            0.67 |
-|   Register     |    <0.001 |       69 |    126800 |            0.05 |
+|   Register     |    <0.001 |       63 |    126800 |            0.05 |
 |   Others       |     0.000 |        6 |       --- |             --- |
-| Signals        |     0.002 |      588 |       --- |             --- |
-| I/O            |     0.016 |       47 |       210 |           22.38 |
-| Static Power   |     0.104 |          |           |                 |
-| Total          |     0.126 |          |           |                 |
+| Signals        |     0.002 |      578 |       --- |             --- |
+| I/O            |     0.015 |       26 |       210 |           12.38 |
+| Static Power   |     0.097 |          |           |                 |
+| Total          |     0.117 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 | Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |
 | Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.005 |       0.001 |      0.004 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -140,7 +140,7 @@ Table of Contents
 +------------+-----------+
 | Name       | Power (W) |
 +------------+-----------+
-| Controller |     0.022 |
+| Controller |     0.020 |
 |   display  |     0.001 |
 +------------+-----------+
 

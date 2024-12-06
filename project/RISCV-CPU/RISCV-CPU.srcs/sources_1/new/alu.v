@@ -24,7 +24,7 @@ module alu(
     input wire[31:0] num_1,
     input wire[31:0] num_2,
     input wire[2:0] alu_control,
-    output wire[31:0] result,
+    output reg[31:0] result,
     output wire is_zero
     );
 
@@ -53,6 +53,7 @@ module alu(
             default:begin
                 result=32'b0;
             end
+        endcase
     end
 
 endmodule

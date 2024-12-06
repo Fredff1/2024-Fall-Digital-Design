@@ -1,0 +1,13 @@
+0.6
+2019.2
+Oct 24 2019
+19:01:44
+D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.sim/sim_1/behav/xsim/glbl.v,1571945291,verilog,,,,glbl,,,,,,,,
+D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sim_1/new/cpu_test.v,1733457415,verilog,,,,tb_cpu_imp,,,,,,,,
+D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/alu.v,1733384086,verilog,,D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/controller.v,,alu,,,,,,,,
+D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/controller.v,1733455730,verilog,,D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/cpu_imp.v,,controller,,,,,,,,
+D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/cpu_imp.v,1733456277,verilog,,D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/data_memory.v,,cpu_imp,,,,,,,,
+D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/data_memory.v,1733384055,verilog,,D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/instruction_memory.v,,data_memory,,,,,,,,
+D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/instruction_memory.v,1733453992,verilog,,D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/program_counter.v,,instruction_memory,,,,,,,,
+D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/program_counter.v,1733454859,verilog,,D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/register_group.v,,program_counter,,,,,,,,
+D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sources_1/new/register_group.v,1733452807,verilog,,D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sim_1/new/cpu_test.v,,register_group,,,,,,,,

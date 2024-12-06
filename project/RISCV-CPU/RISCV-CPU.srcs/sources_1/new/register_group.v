@@ -54,6 +54,7 @@ module register_group(
             default: begin
                 
             end
+        endcase
 
     end
 

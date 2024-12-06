@@ -23,7 +23,7 @@
 module instruction_memory(
     input wire[15:0] address,
     input wire flag,
-    output wire[31:0] instruction
+    output reg[31:0] instruction
     );
 
     reg [31:0] memory [0:127];
@@ -31,6 +31,9 @@ module instruction_memory(
     always @(*) begin
         if(flag)begin
             instruction=memory[address];
+        end
+        else begin
+            instruction=32'h0;
         end
     end
 

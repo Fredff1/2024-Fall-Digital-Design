@@ -25,7 +25,7 @@ module data_memory(
     input wire[31:0] write_data,
     input wire read_flag,
     input wire write_flag,
-    output wire[31:0] data_read
+    output reg[31:0] data_read
       );
 
     reg [31:0] memory [0:127];

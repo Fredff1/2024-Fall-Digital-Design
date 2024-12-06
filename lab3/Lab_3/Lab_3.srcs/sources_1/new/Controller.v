@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`define SIMULATION
+//`define SIMULATION
 
 module Controller(
     input wire CLK100MHZ,                 
