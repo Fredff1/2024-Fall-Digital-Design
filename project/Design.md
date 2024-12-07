@@ -70,7 +70,7 @@ CPU需要实现的模块包括：
 #### 通用寄存器组
 
 - input clk 位宽 1
-- input reg_id_1,reg_id_2 两个源寄存器的编号 位宽 5
+- input reg_id_1,reg_id_2,reg_d 两个源寄存器的编号 位宽 5
 - input operation_type 0代表只读1和2，1代表写1读2，2代表读写1，读2 位宽 2
 - input write_data 写入的寄存器的数据 位宽 32
 - output reg_data_1,reg_data_2 读出的信号 位宽 32
@@ -99,6 +99,11 @@ CPU需要实现的模块包括：
 - output reg_read,reg_write 读写寄存器的信号 位宽 1
 - output branch 分支信号 位宽 1
 - output alu_op_type alu操作类型信号 位宽 3
+- output instruction_type 指令的类型 位宽 3
+- output reg1 位宽 5
+- output reg2 位宽 5
+- output reg3 位宽 5
+- output imm 位宽 32
 
 #### 上层的cpu模块
 

@@ -21,6 +21,7 @@
 
 
 module data_memory(
+    input wire clk,
     input wire[15:0] address,
     input wire[31:0] write_data,
     input wire read_flag,
@@ -38,7 +39,7 @@ module data_memory(
         end
     end
 
-    always @(write_flag) begin
+    always @(*) begin
         if(write_flag)begin
             memory[address]=write_data;
         end

@@ -29,14 +29,20 @@ module cpu_imp(
     );
 
      // 内部信号定义
-    wire [15:0] next_pc;
+    reg [15:0] next_pc;
     wire [31:0] reg_data_1, reg_data_2;
-    wire [31:0] imm_data;
-    wire [31:0] alu_input_2;
+    reg [31:0] alu_input_1,alu_input_2;
     wire [1:0] alu_2_type;
     wire mem_read, mem_write, reg_read, reg_write, branch;
     wire [2:0] alu_op_type;
     wire is_zero;
+    wire [2:0] instruction_type;
+    wire [4:0] reg_1;
+    wire [4:0] reg_2;
+    wire [4:0] reg_3;
+    wire [31:0] imm;
+    reg [31:0] data_to_reg3;
+    wire [31:0] data_from_mem;
 
     // ============================
     // Program Counter
@@ -69,7 +75,12 @@ module cpu_imp(
         .reg_read(reg_read),
         .reg_write(reg_write),
         .branch(branch),
-        .alu_op_type(alu_op_type)
+        .alu_op_type(alu_op_type),
+        .instruction_type(instruction_type),
+        .reg1(reg_1),
+        .reg2(reg_2),
+        .reg3(reg_3),
+        .imm(imm)
     );
 
     // ============================
@@ -77,10 +88,12 @@ module cpu_imp(
     // ============================
     register_group reg_file (
         .clk(clk),
-        .reg_id_1(instruction[19:15]),  // rs1
-        .reg_id_2(instruction[24:20]),  // rs2
-        .operation_type({reg_read, reg_write}), // 读/写控制
-        .data(alu_result),              // 写入数据
+        .reg_id_1(reg_1),  // rs1
+        .reg_id_2(reg_2),  // rs2
+        .reg_d(reg_3),
+        .read(reg_read), // 读/写控制
+        .write(reg_write),
+        .data(data_to_reg3),              // 写入数据
         .reg_data_1(reg_data_1),        // 输出寄存器 1 数据
         .reg_data_2(reg_data_2)         // 输出寄存器 2 数据
     );
@@ -88,16 +101,57 @@ module cpu_imp(
     // ============================
     // ALU Input Selection
     // ============================
-    assign imm_data = {{20{instruction[31]}}, instruction[31:20]}; // 符号扩展立即数
-    assign alu_input_2 = (alu_2_type == 2'b00) ? reg_data_2 :      // 第二操作数为寄存器
-                         (alu_2_type == 2'b01) ? imm_data :        // 第二操作数为立即数
-                         32'b0;                                   // 默认值
+    always @(*) begin
+        alu_input_1=reg_data_1;
+        case (alu_2_type)
+            2'b00:begin
+                alu_input_2=reg_data_2;
+            end
+            2'b01:begin
+                alu_input_2=imm;
+            end
+        endcase
+    end
+
+    always @(*) begin
+        next_pc=0;
+        case (instruction_type)
+            3'b000: begin //R
+            data_to_reg3=alu_result;
+            end
+            3'b001: begin //I for immediate
+            data_to_reg3=alu_result;
+            end
+            3'b010: begin //I for lw
+            data_to_reg3=data_from_mem;
+            end
+            3'b011: begin //S
+            data_to_reg3=32'b0;
+            end
+            3'b100: begin //B Only beq for this pj
+            data_to_reg3=32'b0;
+            if(reg_data_1==reg_data_2)begin
+                next_pc=alu_result;
+            end
+            end
+            3'b101: begin //J
+            data_to_reg3=32'b0;
+            end
+            3'b110: begin //U NOT REQUIRED FOR THIS PROJECT
+            data_to_reg3=32'b0;
+            end
+            default: begin
+            data_to_reg3=32'b0;
+            end
+        endcase
+        
+    end
 
     // ============================
     // ALU
     // ============================
     alu arithmetic_logic_unit (
-        .num_1(reg_data_1),
+        .num_1(alu_input_1),
         .num_2(alu_input_2),
         .alu_control(alu_op_type),
         .result(alu_result),
@@ -108,10 +162,11 @@ module cpu_imp(
     // Data Memory
     // ============================
     data_memory data_mem (
+        .clk(clk),
         .address(alu_result[15:0]),     // 地址由 ALU 提供
         .write_data(reg_data_2),        // 写入数据来自寄存器 2
         .read_flag(mem_read),           // 读取使能
         .write_flag(mem_write),         // 写入使能
-        .data_read()                    // 本示例中未使用数据存储器读取输出
+        .data_read(data_from_mem)                  
     );
 endmodule

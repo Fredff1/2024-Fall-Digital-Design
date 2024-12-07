@@ -24,10 +24,12 @@ module register_group(
     input wire clk,
     input wire[4:0] reg_id_1,
     input wire[4:0] reg_id_2,
-    input wire[1:0] operation_type,
+    input wire[4:0] reg_d,
+    input wire read,
+    input wire write,
     input wire[31:0] data,
-    output wire[31:0] reg_data_1,
-    output wire[31:0] reg_data_2
+    output reg[31:0] reg_data_1,
+    output reg[31:0] reg_data_2
     );
 
     reg [31:0] registers [0:31];
@@ -36,26 +38,16 @@ module register_group(
         registers[0] = 32'b0;
     end
 
-    assign reg_data_1 = registers[reg_id_1]; 
-    assign reg_data_2 = registers[reg_id_2]; 
 
-    always @(posedge clk) begin
-        case(operation_type)
-            2'b01: begin
-                if(reg_id_1!=5'b00000)begin
-                    registers[reg_id_1]=data;
-                end
-            end
-            2'b10: begin
-                if(reg_id_1!=5'b00000)begin
-                    registers[reg_id_1]=data;
-                end
-            end
-            default: begin
-                
-            end
-        endcase
 
+    always @(*) begin
+        if(write) begin
+            if(reg_d!=5'b00000)begin
+                registers[reg_d]=data;
+            end
+        end
+        reg_data_1 = registers[reg_id_1]; 
+        reg_data_2 = registers[reg_id_2]; 
     end
 
 endmodule
