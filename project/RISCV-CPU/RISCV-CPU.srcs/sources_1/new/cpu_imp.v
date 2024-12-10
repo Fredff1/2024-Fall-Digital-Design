@@ -59,7 +59,7 @@ module cpu_imp(
     // Instruction Memory (数据存储器作为指令存储器)
     // ============================
     instruction_memory instruction_memory (
-        .address(pc_address/4),           // PC 提供的指令地址          // 指令存储器不需要写数据
+        .address(pc_address),           // PC 提供的指令地址          // 指令存储器不需要写数据
         .flag(1'b1),               // 始终启用读取              // 禁用写入
         .instruction(instruction)         // 读取的指令
     );
@@ -102,7 +102,15 @@ module cpu_imp(
     // ALU Input Selection
     // ============================
     always @(*) begin
-        alu_input_1=reg_data_1;
+        case (instruction_type)
+            3'b100:begin
+                alu_input_1=pc_address;
+            end
+            default: begin
+                alu_input_1=reg_data_1;
+            end
+        endcase
+        
         case (alu_2_type)
             2'b00:begin
                 alu_input_2=reg_data_2;

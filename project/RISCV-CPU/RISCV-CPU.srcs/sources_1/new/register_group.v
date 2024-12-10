@@ -34,8 +34,11 @@ module register_group(
 
     reg [31:0] registers [0:31];
 
+    integer i;
     initial begin
-        registers[0] = 32'b0;
+        for (i = 0; i < 32; i = i + 1) begin
+            registers[i] = 32'b0;
+        end
     end
 
 

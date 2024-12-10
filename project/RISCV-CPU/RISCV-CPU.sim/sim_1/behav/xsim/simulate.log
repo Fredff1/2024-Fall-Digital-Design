@@ -1,64 +1,64 @@
 Vivado Simulator 2019.2
 Time resolution is 1 ps
 Step 1: ADD Instruction
-PC Address: 0004, Instruction: 002081b3, ALU Result: 00000006
+PC Address: 0004, Instruction: 0040a103, ALU Result: 0000000c
 Expected ALU Result: sum of x1 and x2
 Step 2: ADDI Instruction
-PC Address: 0008, Instruction: 002082b3, ALU Result: 00000006
+PC Address: 0008, Instruction: 002081b3, ALU Result: 0000000c
 Expected ALU Result: x1 + 1
 Step 3: OR Instruction
-PC Address: 000c, Instruction: 00108313, ALU Result: 00000003
+PC Address: 000c, Instruction: 40118233, ALU Result: 00000004
 Expected ALU Result: x1 | x2
 Step 4: SLT Instruction
-PC Address: 0010, Instruction: 0020e3b3, ALU Result: 00000006
+PC Address: 0010, Instruction: 0040e2b3, ALU Result: 0000000c
 Expected ALU Result: (x1 < x2) ? 1 : 0
 Step 5: BEQ Instruction
-PC Address: 0014, Instruction: 0010e413
+PC Address: 0014, Instruction: 0012e313
 Expected PC Address: (x1 == x2) ? branch : PC + 4
 Step 6: SW Instruction
-PC Address: 0018, Instruction: 0020a4b3
+PC Address: 0018, Instruction: 00612023
 Expected Memory Address: ALU Result (computed address)
 Step 7: LW Instruction
-PC Address: 001c, Instruction: 0010a533
+PC Address: 001c, Instruction: 004123b3
 Expected Loaded Data: value from memory[ALU Result]
 Step 7: LW Instruction
-PC Address: 0020, Instruction: 0020a023
+PC Address: 0020, Instruction: 00812413
 Expected Loaded Data: value from memory[ALU Result]
 Step 7: LW Instruction
-PC Address: 0024, Instruction: 0000a583
+PC Address: 0024, Instruction: fe518ae3
 Expected Loaded Data: value from memory[ALU Result]
 Step 7: LW Instruction
-PC Address: 0028, Instruction: 01f00463
+PC Address: 0018, Instruction: 00612023
 Expected Loaded Data: value from memory[ALU Result]
-$finish called at time : 750 ns : File "D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sim_1/new/cpu_test.v" Line 107
+$finish called at time : 750 ns : File "D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sim_1/new/cpu_test.v" Line 159
 Step 1: ADD Instruction
-PC Address: 0004, Instruction: 002081b3, ALU Result: 00000006
+PC Address: 0004, Instruction: 0040a103, ALU Result: 0000000c
 Expected ALU Result: sum of x1 and x2
 Step 2: ADDI Instruction
-PC Address: 0008, Instruction: 002082b3, ALU Result: 00000006
+PC Address: 0008, Instruction: 002081b3, ALU Result: 0000000c
 Expected ALU Result: x1 + 1
 Step 3: OR Instruction
-PC Address: 000c, Instruction: 00108313, ALU Result: 00000003
+PC Address: 000c, Instruction: 40118233, ALU Result: 00000004
 Expected ALU Result: x1 | x2
 Step 4: SLT Instruction
-PC Address: 0010, Instruction: 0020e3b3, ALU Result: 00000006
+PC Address: 0010, Instruction: 0040e2b3, ALU Result: 0000000c
 Expected ALU Result: (x1 < x2) ? 1 : 0
 Step 5: BEQ Instruction
-PC Address: 0014, Instruction: 0010e413
+PC Address: 0014, Instruction: 0012e313
 Expected PC Address: (x1 == x2) ? branch : PC + 4
 Step 6: SW Instruction
-PC Address: 0018, Instruction: 0020a4b3
+PC Address: 0018, Instruction: 00612023
 Expected Memory Address: ALU Result (computed address)
 Step 7: LW Instruction
-PC Address: 001c, Instruction: 0010a533
+PC Address: 001c, Instruction: 004123b3
 Expected Loaded Data: value from memory[ALU Result]
 Step 7: LW Instruction
-PC Address: 0020, Instruction: 0020a023
+PC Address: 0020, Instruction: 00812413
 Expected Loaded Data: value from memory[ALU Result]
 Step 7: LW Instruction
-PC Address: 0024, Instruction: 0000a583
+PC Address: 0024, Instruction: fe518ae3
 Expected Loaded Data: value from memory[ALU Result]
 Step 7: LW Instruction
-PC Address: 0028, Instruction: 01f00463
+PC Address: 0018, Instruction: 00612023
 Expected Loaded Data: value from memory[ALU Result]
-$finish called at time : 750 ns : File "D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sim_1/new/cpu_test.v" Line 107
+$finish called at time : 750 ns : File "D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.srcs/sim_1/new/cpu_test.v" Line 159

@@ -4,11 +4,11 @@ module tb_cpu_imp;
 
     reg clk;                       // 时钟信号
     reg reset;                     // 复位信号
-    wire [15:0] pc_address;        // 程序计数器地�??
+    wire [15:0] pc_address;        // 程序计数器地�??
     wire [31:0] instruction;       // 当前指令
     wire [31:0] alu_result;        // ALU 运算结果
 
-    // 实例�?? cpu_imp 模块
+    // 实例�?? cpu_imp 模块
     cpu_imp uut (
         .clk(clk),
         .reset(reset),
@@ -25,22 +25,74 @@ module tb_cpu_imp;
 
     // 初始化指令存储器
     initial begin
-        // 将指令加载到指令存储�??
-        uut.instruction_memory.memory[1] = 32'b0000000_00010_00001_000_00011_0110011; // add x3, x1, x2
-        uut.instruction_memory.memory[2] = 32'b0000000_00010_00001_000_00101_0110011; // sub x5, x1, x2
-        uut.instruction_memory.memory[3] = 32'b000000000001_00001_000_00110_0010011;  // addi x6, x1, 1
-        uut.instruction_memory.memory[4] = 32'b0000000_00010_00001_110_00111_0110011; // or x7, x1, x2
-        uut.instruction_memory.memory[5] = 32'b000000000001_00001_110_01000_0010011; // ori x8, x1, 1
-        uut.instruction_memory.memory[6] = 32'b0000000_00010_00001_010_01001_0110011; // slt x9, x1, x2
-        uut.instruction_memory.memory[7] = 32'b000000000001_00001_010_01010_0110011; // slti x10, x1, 1
-        uut.instruction_memory.memory[8] = 32'b0000000_00010_00001_010_00000_0100011;  // sw x2, 0(x1)
-        uut.instruction_memory.memory[9] = 32'b000000000000_00001_010_01011_0000011;  // lw x11, 0(x1)
-        uut.instruction_memory.memory[10] = 32'b0000000_11111_00000_000_01000_1100011; // beq x3, x4, 0
-        uut.reg_file.registers[1]=32'h00000002;
-        uut.reg_file.registers[2]=32'h00000004;
-        uut.reg_file.registers[3]=32'h00000001;
-        uut.reg_file.registers[4]=32'h00000001;
-        uut.reg_file.registers[31]=32'h00000000;
+        // 将指令加载到指令存储�??
+        uut.instruction_memory.memory[0] =8'h93; //addi
+        uut.instruction_memory.memory[2] =8'h80; 
+
+        uut.instruction_memory.memory[4] =8'h03; //lw
+        uut.instruction_memory.memory[5] =8'ha1; 
+        uut.instruction_memory.memory[6] =8'h40; 
+
+        uut.instruction_memory.memory[8] =8'hb3; //add
+        uut.instruction_memory.memory[9] =8'h81; 
+        uut.instruction_memory.memory[10] =8'h20; 
+
+
+        uut.instruction_memory.memory[12] =8'h33; 
+        uut.instruction_memory.memory[13] =8'h82; //sub
+        uut.instruction_memory.memory[14] =8'h11; 
+        uut.instruction_memory.memory[15] =8'h40; 
+
+        uut.instruction_memory.memory[16] =8'hb3; 
+        uut.instruction_memory.memory[17] =8'he2; //or X5,X1,X4
+        uut.instruction_memory.memory[18] =8'h40; 
+
+        // 00000000_01000000_11100010_10110011
+        // 00_40_e2_b3
+
+        uut.instruction_memory.memory[20] =8'h13; 
+        uut.instruction_memory.memory[21] =8'he3; 
+        uut.instruction_memory.memory[22] =8'h12; //ori X6,X5,1
+
+        // 00000000_00010010_11100011_00010011
+        //00_12_d3_13
+
+        uut.instruction_memory.memory[24] =8'h23; 
+        uut.instruction_memory.memory[25] =8'h20; 
+        uut.instruction_memory.memory[26] =8'h61; //sw X6,0(X2)
+        // 00000000_01100001_00100000_00100011
+        // 00_61_20_23
+
+        uut.instruction_memory.memory[28] =8'hb3; 
+        uut.instruction_memory.memory[29] =8'h23;
+        uut.instruction_memory.memory[30] =8'h41; // slt X7,X2,X4
+        //00000000_01000001_00100011_10110011
+        //00_41_23_b3
+        
+
+        uut.instruction_memory.memory[32] =8'h13;  
+        uut.instruction_memory.memory[33] =8'h24;  //slti X8,X2,8
+        uut.instruction_memory.memory[34] =8'h81;  
+        // 00000000_10000001_00100100_00010011
+        // 00_81_24_13
+
+        uut.instruction_memory.memory[36] =8'he3;  
+        uut.instruction_memory.memory[37] =8'h8a;   //beq X3,X5,-12
+        uut.instruction_memory.memory[38] =8'h51;   
+        uut.instruction_memory.memory[39] =8'hfe;
+        
+
+        uut.data_mem.memory[1]=8'h01;
+        uut.data_mem.memory[2]=8'h02;
+        uut.data_mem.memory[3]=8'h03;
+        uut.data_mem.memory[4]=8'h04;
+        uut.data_mem.memory[5]=8'h05;
+        uut.data_mem.memory[6]=8'h06;
+        uut.data_mem.memory[7]=8'h07;
+        uut.data_mem.memory[8]=8'h08;
+        uut.data_mem.memory[12]=8'h04;
+
+
         
 
     
@@ -48,7 +100,7 @@ module tb_cpu_imp;
 
     // 测试流程
     initial begin
-        // 初始化信�??
+        // 初始化信�??
         reset = 1;
         #10 reset = 0;
 
@@ -57,12 +109,12 @@ module tb_cpu_imp;
         $display("PC Address: %h, Instruction: %h, ALU Result: %h", pc_address, instruction, alu_result);
         $display("Expected ALU Result: sum of x1 and x2");
 
-        // Step 2: 测试立即数加法指�?? (addi)
+        // Step 2: 测试立即数加法指�?? (addi)
         #20 $display("Step 2: ADDI Instruction");
         $display("PC Address: %h, Instruction: %h, ALU Result: %h", pc_address, instruction, alu_result);
         $display("Expected ALU Result: x1 + 1");
 
-        // Step 3: 测试按位或指�?? (or)
+        // Step 3: 测试按位或指�?? (or)
         #20 $display("Step 3: OR Instruction");
         $display("PC Address: %h, Instruction: %h, ALU Result: %h", pc_address, instruction, alu_result);
         $display("Expected ALU Result: x1 | x2");

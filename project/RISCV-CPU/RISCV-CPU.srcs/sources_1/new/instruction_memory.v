@@ -26,11 +26,19 @@ module instruction_memory(
     output reg[31:0] instruction
     );
 
-    reg [31:0] memory [0:127];
+    reg [7:0] memory [0:127];
+
+    integer i;
+    initial begin
+        
+        for (i = 0; i < 128; i = i + 1) begin
+            memory[i] = 8'b0;
+        end
+    end
 ;
     always @(*) begin
         if(flag)begin
-            instruction=memory[address];
+            instruction = {memory[address+3], memory[address + 2], memory[address + 1], memory[address]};
         end
         else begin
             instruction=32'h0;
