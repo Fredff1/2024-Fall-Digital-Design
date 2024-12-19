@@ -19,7 +19,17 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*
+* ALU module takes input num_1 and num_2 (both 32bits) and a control signal alu_control and generate result signal
+* The value of alu_control and its type:
+* 000 add
+* 001 sub
+* 010 and
+* 011 or
+* 100 xor
+* 101 slt
+* others: output=0
+*/
 module alu(
     input wire[31:0] num_1,
     input wire[31:0] num_2,

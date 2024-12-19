@@ -19,7 +19,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/* 
+* 128 bytes for data memory
+*/
 module data_memory(
     input wire clk,
     input wire[15:0] address,

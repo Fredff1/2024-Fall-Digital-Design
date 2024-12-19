@@ -19,7 +19,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*
+* 32 registers ,x0 is always 0
+*/
 module register_group(
     input wire clk,
     input wire[4:0] reg_id_1,

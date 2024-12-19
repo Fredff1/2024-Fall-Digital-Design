@@ -19,11 +19,15 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*
+* pc 
+* default add 4 bytes
+* if branch,jump to next_pc
+*/
 module program_counter(
     input wire clk,
     input wire reset,
-    input wire pc_update,
+    input wire branch,
     input wire[15:0] next_pc,
     output reg[15:0] pc_output
     );
@@ -33,15 +37,11 @@ module program_counter(
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            pc_output <= 16'b0; // 复位时清零
-        end else if (pc_update) begin
-            if (next_pc != 16'b0) begin
-                pc_output <= next_pc; // 跳转到 next_pc
-            end else begin
-                pc_output <= pc_incremented; // 顺序递增
-            end
+            pc_output <= 16'b0; // set zero
+        end else if (branch) begin //branch
+            pc_output <= next_pc; 
         end else begin
-            pc_output <= pc_incremented; // 默认递增
+            pc_output <= pc_incremented; // default
         end
     end
 

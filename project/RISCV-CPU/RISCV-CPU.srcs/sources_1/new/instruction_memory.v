@@ -19,7 +19,10 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*
+* 128 bytes instruction memory
+* little
+*/
 module instruction_memory(
     input wire[15:0] address,
     input wire flag,
@@ -30,7 +33,6 @@ module instruction_memory(
 
     integer i;
     initial begin
-        
         for (i = 0; i < 128; i = i + 1) begin
             memory[i] = 8'b0;
         end

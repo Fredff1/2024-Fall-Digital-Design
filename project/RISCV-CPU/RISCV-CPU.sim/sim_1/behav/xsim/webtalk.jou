@@ -2,8 +2,8 @@
 # Webtalk v2019.2 (64-bit)
 # SW Build 2700185 on Thu Oct 24 18:46:05 MDT 2019
 # IP Build 2699827 on Thu Oct 24 21:16:38 MDT 2019
-# Start of session at: Tue Dec 10 17:15:55 2024
-# Process ID: 1364
+# Start of session at: Thu Dec 19 16:48:01 2024
+# Process ID: 23868
 # Current directory: D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.sim/sim_1/behav/xsim/xsim.dir/tb_cpu_imp_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/Courses/CS_Cousrces/2024 Fall Digital Design/project/RISCV-CPU/RISCV-CPU.sim/sim_1/behav/xsim/webtalk.log

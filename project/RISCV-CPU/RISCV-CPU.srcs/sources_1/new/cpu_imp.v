@@ -28,7 +28,7 @@ module cpu_imp(
     output wire [31:0] alu_result       
     );
 
-     // 内部信号定义
+
     reg [15:0] next_pc;
     wire [31:0] reg_data_1, reg_data_2;
     reg [31:0] alu_input_1,alu_input_2;
@@ -50,18 +50,18 @@ module cpu_imp(
     program_counter pc (
         .clk(clk),
         .reset(reset),
-        .pc_update(branch),   // 分支控制
+        .branch(branch),   // branch signal
         .next_pc(next_pc),
-        .pc_output(pc_address)          // 当前指令地址
+        .pc_output(pc_address)          // the address for next instruction
     );
 
     // ============================
-    // Instruction Memory (数据存储器作为指令存储器)
+    // Instruction Memory 
     // ============================
     instruction_memory instruction_memory (
-        .address(pc_address),           // PC 提供的指令地址          // 指令存储器不需要写数据
-        .flag(1'b1),               // 始终启用读取              // 禁用写入
-        .instruction(instruction)         // 读取的指令
+        .address(pc_address),        // current address
+        .flag(1'b1),               // always read in this project
+        .instruction(instruction)         // target instruction
     );
 
     // ============================
@@ -91,11 +91,11 @@ module cpu_imp(
         .reg_id_1(reg_1),  // rs1
         .reg_id_2(reg_2),  // rs2
         .reg_d(reg_3),
-        .read(reg_read), // 读/写控制
+        .read(reg_read), // r/w control
         .write(reg_write),
-        .data(data_to_reg3),              // 写入数据
-        .reg_data_1(reg_data_1),        // 输出寄存器 1 数据
-        .reg_data_2(reg_data_2)         // 输出寄存器 2 数据
+        .data(data_to_reg3),              // write data
+        .reg_data_1(reg_data_1),        // data from reg 1
+        .reg_data_2(reg_data_2)         // data from reg 2
     );
 
     // ============================
@@ -120,6 +120,10 @@ module cpu_imp(
             end
         endcase
     end
+
+    // ============================
+    // Reg write selection
+    // ============================
 
     always @(*) begin
         next_pc=0;
@@ -171,10 +175,10 @@ module cpu_imp(
     // ============================
     data_memory data_mem (
         .clk(clk),
-        .address(alu_result[15:0]),     // 地址由 ALU 提供
-        .write_data(reg_data_2),        // 写入数据来自寄存器 2
-        .read_flag(mem_read),           // 读取使能
-        .write_flag(mem_write),         // 写入使能
+        .address(alu_result[15:0]),     // Alu result
+        .write_data(reg_data_2),        // reg_2 data
+        .read_flag(mem_read),          
+        .write_flag(mem_write),        
         .data_read(data_from_mem)                  
     );
 endmodule

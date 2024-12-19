@@ -2,65 +2,79 @@
 
 module tb_instruction_memory;
 
-    // 输入信号
-    reg [15:0] address;          // 指令地址
-    reg flag;                    // 读取使能信号
+   
+    reg [15:0] address;          
+    reg flag;                    
 
-    // 输出信号
-    wire [31:0] instruction;     // 读取的指令
+    
+    wire [31:0] instruction;     
 
-    // 实例化 instruction_memory 模块
+
     instruction_memory uut (
         .address(address),
         .flag(flag),
         .instruction(instruction)
     );
 
-    // 初始化指令存储器内容
     initial begin
-        uut.memory[0] = 32'h12345678;  // 示例指令 1
-        uut.memory[1] = 32'h9abcdef0;  // 示例指令 2
-        uut.memory[2] = 32'h0fedcba9;  // 示例指令 3
+        
+        uut.memory[0] = 8'h78;
+        uut.memory[1] = 8'h56;
+        uut.memory[2] = 8'h34;
+        uut.memory[3] = 8'h12;
+        
+        uut.memory[4] = 8'hf0;
+        uut.memory[5] = 8'hde;
+        uut.memory[6] = 8'hbc;
+        uut.memory[7] = 8'h9a;
+        
+        uut.memory[8] = 8'ha9;
+        uut.memory[9] = 8'hcb;
+        uut.memory[10] = 8'hed;
+        uut.memory[11] = 8'h0f;
+        
+        ;
+        
     end
 
-    // 测试流程
+
     initial begin
-        // 初始化信号
+  
         address = 16'd0;
         flag = 1'b0;
 
-        // Step 1: 读取地址 0 的指令
+        // Step 1: read from 0
         #10 address = 16'd0; flag = 1'b1;
         #10 $display("--------------------------------------------------------");
         #10 $display("Read from Address %d: Instruction = %h", address, instruction);
         #10 $display("Expected: 12345678");
         #10 $display("--------------------------------------------------------");
-        #10 flag = 1'b0; // 停止读取
+        #10 flag = 1'b0; 
 
 
-        // Step 2: 读取地址 1 的指令
-        #10 address = 16'd1; flag = 1'b1;
+        // Step 2: read from 4
+        #10 address = 16'd4; flag = 1'b1;
         #10 $display("Read from Address %d: Instruction = %h", address, instruction);
         #10 $display("Expected: 9abcdef0");
         #10 $display("--------------------------------------------------------");
-        #10 flag = 1'b0; // 停止读取
+        #10 flag = 1'b0; 
 
 
-        // Step 3: 读取地址 2 的指令
-        #10 address = 16'd2; flag = 1'b1;
+        // Step 3: read from 8
+        #10 address = 16'd8; flag = 1'b1;
         #10 $display("Read from Address %d: Instruction = %h", address, instruction);
         #10 $display("Expected: 0fedcba9");
         #10 $display("--------------------------------------------------------");
-        #10 flag = 1'b0; // 停止读取
+        #10 flag = 1'b0; 
 
 
-        // Step 4: 测试未使能的读取
+        // Step 4: read from 16
         #10 address = 16'd0; flag = 1'b0;
         #10 $display("Read without flag enabled: Instruction = %h", instruction);
         #10 $display("Expected: 0");
         #10 $display("--------------------------------------------------------");
   
-        // 测试结束
+        // end
         #10 $finish;
     end
 
